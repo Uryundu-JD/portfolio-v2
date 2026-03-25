@@ -8,9 +8,9 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({ name, description, tags, image, source_code_link }) => {
+const ProjectCard = ({ id, title, desc, tags, image, company }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring")}>
+    <div>
       <Tilt
         options={{
           max: 45,
@@ -25,28 +25,43 @@ const ProjectCard = ({ name, description, tags, image, source_code_link }) => {
             alt="project_image"
             className="w-full h-full object-cover rounded-2xl"
           />
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+          {/* <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             <div
-              onClick={() => window.open(source_code_link, "_blank")}
+              onClick={() => null}
               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
             >
               <img src={github} alt="source code" className="w-1/2 h-1/2 object-contain" />
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+          <h3 className="text-white font-bold text-[24px]">{title}</h3>
+          <p className="mt-2 text-secondary text-[14px]">{desc}</p>
         </div>
         <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <p key={tag.name} className={`text-[14px] ${tag.color}`}>
-              #{tag.name}
-            </p>
+          {tags.map((tag, index) => (
+            <span
+            key={index}
+            style={{
+                backgroundColor: '#374151',
+                color: '#d1d5db',
+            }}
+            className='px-2 py-1 text-xs rounded-full'>
+                {tag}
+            </span>
           ))}
         </div>
+        <div className='flex flex-wrap gap-1.5 mb-4 mt-4'>
+            <span
+            style={{
+                backgroundColor: '#374151',
+            }}
+            className='px-2 py-1 text-xs italic rounded-full text-orange-300'>
+                {company}
+            </span>
+        </div>
       </Tilt>
-    </motion.div>
+    </div>
   );
 };
 
@@ -60,8 +75,7 @@ const Works = () => {
       <div className="w-full flex">
         <motion.p variants={fadeIn("", "", 0.1)} className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]">
           Following projects showcase my skills and experience through examples
-          of my work. Each project is briefly described with links to code
-          repositories in it.
+          of my work.
         </motion.p>
       </div>
       <div className="mt-20 flex flex-wrap gap-7">

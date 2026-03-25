@@ -40,11 +40,13 @@ const About = () => {
         variants={fadeIn('', '', 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I am a Computer Science student at SRM University and multilingual speaker with a passion
-        for ethical hacking, artificial intelligence, and neural language processing. I am looking
-        to join a company that values innovation, collaboration, and continuous learning and am
-        confident that my enthusiasm and drive will help me succeed in any role that leverages my
-        passion for technology.
+        I am a Computer Engineering graduate specializing in Mobile Application Development, 
+        with strong expertise in software and web technologies. Proven ability to design, 
+        develop, and deploy user-focused mobile applications that enhance performance, 
+        usability, and business efficiency. Also my professional experience as a Calibration 
+        Technician has strengthened my analytical skills, attention to detail, and ability to 
+        optimize processes while ensuring compliance with industry standards. Committed to 
+        delivering high-quality, scalable mobile solutions that drive measurable results.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

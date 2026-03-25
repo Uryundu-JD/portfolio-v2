@@ -71,9 +71,9 @@ const Contact = () => {
         "template_mf5x3bh",
         {
           from_name: form.name,
-          to_name: "Lohit Kolluri",
+          to_name: "JD Oriondo",
           from_email: form.email,
-          to_email: "lohitkolluri@gmail.com",
+          to_email: "oriondo.jd99@gmail.com",
           message: form.message,
         },
         "p-gXzzyvEhPaJ0XA-"
@@ -102,8 +102,21 @@ const Contact = () => {
       <motion.div variants={slideIn("left", "tween", 0.2, 1)} className="flex-[0.75] bg-black-100 p-8 rounded-2xl">
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact Me</h3>
-
-        <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
+        <h2
+                className='text-3xl sm:text-4xl font-bold mb-3'
+                style={{
+                    color: 'white'
+                }}>
+                oriondo.jd99@gmail.com <span
+                    style={{background:'linear-gradient(to right, #f97316, #f59e0b)',
+                    WebkitBackgroundClip:'text',
+                    backgroundClip:'text',
+                    color:'transparent'}}
+                    className='font-bold'>
+                        +63 921 210 4764
+                    </span>
+                </h2>
+        {/* <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
           <InputField
             label="Your Name"
             name="name"
@@ -140,7 +153,7 @@ const Contact = () => {
             {loading ? "Sending..." : "Send"}
           </button>
           {confirmation && <p className="text-green-500">{confirmation}</p>}
-        </form>
+        </form> */}
       </motion.div>
 
       <motion.div variants={slideIn("right", "tween", 0.2, 1)} className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]">
