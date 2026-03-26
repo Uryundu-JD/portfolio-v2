@@ -67,16 +67,14 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_r2i0by4",
-        "template_mf5x3bh",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
-          from_name: form.name,
-          to_name: "JD Oriondo",
-          from_email: form.email,
-          to_email: "oriondo.jd99@gmail.com",
+          name: form.name,
+          email: form.email,
           message: form.message,
         },
-        "p-gXzzyvEhPaJ0XA-"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
@@ -102,7 +100,7 @@ const Contact = () => {
       <motion.div variants={slideIn("left", "tween", 0.2, 1)} className="flex-[0.75] bg-black-100 p-8 rounded-2xl">
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact Me</h3>
-        <h2
+        {/* <h2
                 className='text-3xl sm:text-4xl font-bold mb-3'
                 style={{
                     color: 'white'
@@ -115,8 +113,8 @@ const Contact = () => {
                     className='font-bold'>
                         +63 921 210 4764
                     </span>
-                </h2>
-        {/* <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
+                </h2> */}
+        <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
           <InputField
             label="Your Name"
             name="name"
@@ -153,7 +151,7 @@ const Contact = () => {
             {loading ? "Sending..." : "Send"}
           </button>
           {confirmation && <p className="text-green-500">{confirmation}</p>}
-        </form> */}
+        </form>
       </motion.div>
 
       <motion.div variants={slideIn("right", "tween", 0.2, 1)} className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]">
