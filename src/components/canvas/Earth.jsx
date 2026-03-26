@@ -32,6 +32,8 @@ const EarthCanvas = () => {
       camera={{ fov: 50, near: 0.1, far: 200, position: [-4, 3, 6] }}
       shadows
     >
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[5, 5, 5]} intensity={1} />
       <OrbitControls
         autoRotate
         enableZoom={false}
