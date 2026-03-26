@@ -62,11 +62,11 @@ export const technologies = [
   { name: "Unity3D", icon: unity3d },
   { name: "Blender3D", icon: blender3d },
   { name: "Arduino", icon: arduino },
-  { name: "JavaScript", icon: javascript },
-  { name: "Python", icon: python },
-  { name: "Tailwind CSS", icon: tailwind },
-  { name: "Node JS", icon: nodejs },
-  { name: "git", icon: git },
+  // { name: "JavaScript", icon: javascript },
+  // { name: "Python", icon: python },
+  // { name: "Tailwind CSS", icon: tailwind },
+  // { name: "Node JS", icon: nodejs },
+  // { name: "git", icon: git },
 ];
 
 export const experiences = [

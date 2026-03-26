@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
-const ComputerModel = () => {
+const ComputerModel = ({isMobile}) => {
   const { scene } = useGLTF(`${import.meta.env.BASE_URL}main_terminal/scene.gltf`);
 
   return (
@@ -20,32 +20,32 @@ const ComputerModel = () => {
       <pointLight intensity={1} />
       <primitive
         object={scene}
-        scale={1.95}
-        position={[0, -1.25, -0.5]}
+        scale={isMobile ? 1.9 : 1.95}
+        position={isMobile ? [0, -1, -0.2] : [0, -1.25, -0.5]}
         rotation={[-0.01, 4.5, -0.1]}
       />
     </mesh>
   );
 };
 
-// const MemoizedComputerModel = React.memo(ComputerModel);
+const MemoizedComputerModel = React.memo(ComputerModel);
 
 const ComputersCanvas = () => {
-  // const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // useEffect(() => {
-  //   const mediaQuery = window.matchMedia("(max-width: 500px)");
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 500px)");
 
-  //   const handleMediaQueryChange = (event) => {
-  //     setIsMobile(event.matches);
-  //   };
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
 
-  //   mediaQuery.addEventListener("change", handleMediaQueryChange);
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
 
-  //   return () => {
-  //     mediaQuery.removeEventListener("change", handleMediaQueryChange);
-  //   };
-  // }, []);
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
 
   return (
     <Canvas
@@ -61,8 +61,7 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <ComputerModel />
-        {/* <MemoizedComputerModel isMobile={isMobile} /> */}
+        <MemoizedComputerModel isMobile={isMobile} />
       </Suspense>
       <Preload all />
     </Canvas>
