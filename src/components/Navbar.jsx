@@ -9,7 +9,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   const toggleResume = () => {
-    const resumeUrl = {`${import.meta.env.BASE_URL}cv_Oriondo-JD.pdf`};
+    const resumeUrl = '/Resume.pdf';
     window.open(resumeUrl);
   };
 
