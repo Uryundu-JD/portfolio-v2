@@ -9,9 +9,8 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   const toggleResume = () => {
-    // const resumeUrl = '/Resume.pdf';
-    // window.open(resumeUrl);
-    null
+    const resumeUrl = '/cv_Oriondo-JD.pdf';
+    window.open(resumeUrl);
   };
 
   useEffect(() => {
@@ -43,7 +42,7 @@ const Navbar = () => {
           isSecondary ? 'secondary' : 'white'
         } hover:text-white text-[20px] font-medium cursor-pointer`}
       >
-        <button onClick={toggleResume}>Resume</button>
+        <button onClick={toggleResume}>CV</button>
       </li>
     </ul>
   );
