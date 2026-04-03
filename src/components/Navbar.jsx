@@ -61,9 +61,9 @@ const Navbar = () => {
               window.scrollTo(0, 0);
             }}
           >
-            <p className="text-white text-[20px] font-bold cursor-pointer flex">
+            <p className="text-white text-[20px] cursor-pointer flex" style={{fontFamily:"OldLondon"}}>
               JD&nbsp;
-              <span className="sm:block hidden">ORIONDO</span>
+              <span className="sm:block hidden" style={{fontFamily:"OldLondon"}}>ORIONDO</span>
             </p>
           </Link>
           {renderNavLinks(false)}

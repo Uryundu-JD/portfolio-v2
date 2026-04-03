@@ -142,3 +142,11 @@
 .confirmation {
   color: #00ff00;
 }
+
+@font-face {
+  font-family: 'OldLondon';
+  src: local('OldLondon'), 
+       url('./assets/fonts/OldLondon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
